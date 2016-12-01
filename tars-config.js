@@ -1,5 +1,36 @@
 module.exports = {
-    "postcss": [],
+    postcss: [
+        {
+            name: 'css-mqpacker',
+            options: {
+                
+            }
+        },
+        {
+            name: 'postcss-discard-comments',
+            options: {
+                removeAll: true
+            }
+        },
+        {
+            name: 'postcss-discard-duplicates',
+            options: {
+                
+            }
+        },
+        {
+            name: 'postcss-discard-empty',
+            options: {
+                
+            }
+        },
+        {
+            name: 'postcss-merge-rules',
+            options: {
+                
+            }
+        }       
+    ],
     "svg": {
         "active": true,
         "workflow": "sprite",
