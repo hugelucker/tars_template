@@ -1,36 +1,5 @@
 module.exports = {
-    postcss: [
-        {
-            name: 'css-mqpacker',
-            options: {
-                
-            }
-        },
-        {
-            name: 'postcss-discard-comments',
-            options: {
-                removeAll: true
-            }
-        },
-        {
-            name: 'postcss-discard-duplicates',
-            options: {
-                
-            }
-        },
-        {
-            name: 'postcss-discard-empty',
-            options: {
-                
-            }
-        },
-        {
-            name: 'postcss-merge-rules',
-            options: {
-                
-            }
-        }       
-    ],
+    "postcss": [],
     "svg": {
         "active": true,
         "workflow": "sprite",
@@ -46,11 +15,12 @@ module.exports = {
     "js": {
         "workflow": "concat",
         "bundler": "webpack",
-        "lint": true,
-        "useBabel": true,
+        "lint": false,
+        "useBabel": false,
         "removeConsoleLog": true,
         "webpack": {
-            "useHMR": false
+            "useHMR": false,
+            "providePlugin": {}
         },
         "jsPathsToConcatBeforeModulesJs": [],
         "lintJsCodeBeforeModules": false,
@@ -68,7 +38,7 @@ module.exports = {
         }
     },
     "notifyConfig": {
-        "useNotify": true,
+        "useNotify": false,
         "title": "TARS notification",
         "sounds": {},
         "taskFinishedText": "Task finished at: "
@@ -82,10 +52,7 @@ module.exports = {
     "templater": "handlebars",
     "cssPreprocessor": "scss",
     "useImagesForDisplayWithDpi": [
-        96,
-        192,
-        288,
-        384
+        96
     ],
     "fs": {
         "staticFolderName": "static",
