@@ -8,16 +8,16 @@
     "babel-preset-es2015": "^6.18.0"
   },
   "devDependencies": {
-    "gulp-postcss": "^6.4.0",
-    "postcss-sorting": "^2.0.1",
-    "css-mqpacker": "^5.0.1",
-    "postcss-discard-comments": "^2.0.4",
-    "postcss-discard-duplicates": "^2.0.2",
-    "postcss-discard-empty": "^2.1.0",
-    "postcss-merge-rules": "^2.0.10",
-    "postcss-flexibility": "^1.1.0",
-    "postcss-merge-longhand": "^3.0.0",
-    "postcss-discard-comments": "^2.0.4"
+    "postcss-sorting": "^2.0.1", //done
+    "css-mqpacker": "^5.0.1", //done
+    "postcss-discard-duplicates": "^2.0.2", //done
+    "postcss-discard-empty": "^2.1.0", //done
+    "postcss-merge-rules": "^2.1.2", //done
+    "postcss-flexibility": "^1.1.0", //done
+    "postcss-merge-longhand": "^3.0.0", //done
+    "postcss-discard-comments": "^2.0.4", //done
+    "uncss": "^0.14.1",
+    "postcss-uncss": "^0.14.0" //done
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
