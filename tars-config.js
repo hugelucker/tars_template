@@ -87,7 +87,7 @@ module.exports = {
         "workflow": "sprite",
         "symbolsConfig": {
             "loadingType": "inject",
-            "usePolyfillForExternalSymbols": true,
+            "usePolyfillForExternalSymbols": false,
             "pathToExternalSymbolsFile": ""
         }
     },
