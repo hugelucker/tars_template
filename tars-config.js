@@ -77,8 +77,8 @@ module.exports = {
         {
             "name": 'postcss-uncss',
             options: {
-                "html": [`./markup/pages/**/*.html`,`./markup/components/**/*.html`],
-                "ignored": [`./markup/pages/**/_*.html`,`/[A-z<>();*%0-9-_,.!&#$+"/\\]+([^svg4everybody();])/g`]
+                "html": [`./markup/pages/_uncss/html/**/*.html`],
+                "ignored": [`./markup/pages/**/_*.html`]
             }
         }
     ],
