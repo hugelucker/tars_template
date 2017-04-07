@@ -1,6 +1,30 @@
 module.exports = {
     "postcss": [
         {
+            "name": 'postcss-discard-comments',
+            options: {
+                "removeAll": true
+            }
+        },
+        {
+            "name": 'css-mqpacker',
+            options: {
+                sort: true
+            }
+        },
+        {
+            "name": 'postcss-merge-rules',
+            options: {}
+        },
+        {
+            "name": 'postcss-merge-longhand',
+            options: {}
+        },
+        {
+            "name": 'postcss-flexibility',
+            options: {}
+        },
+        {
             "name": 'postcss-sorting',
             "options": {
                 "order": [
@@ -37,49 +61,6 @@ module.exports = {
                 ],
                 "unspecified-properties-position": "bottom"
             }
-        },
-        {
-            "name": 'postcss-discard-comments',
-            options: {
-                "removeAll": true
-            }
-        },
-        {
-            "name": 'postcss-discard-duplicates',
-            options: {
-                
-            }
-        },
-        {
-            "name": 'css-mqpacker',
-            options: {
-                sort: true
-            }
-        },
-        {
-            "name": 'postcss-discard-empty',
-            options: {
-                
-            }
-        },
-        {
-            "name": 'postcss-merge-rules',
-            options: {}
-        },
-        {
-            "name": 'postcss-flexibility',
-            options: {}
-        },
-        {
-            "name": 'postcss-merge-longhand',
-            options: {}
-        },
-        {
-            "name": 'postcss-uncss',
-            options: {
-                "html": [`./markup/pages/_uncss/html/**/*.html`],
-                "ignored": [`./markup/pages/**/_*.html`]
-            }
         }
     ],
     "svg": {
@@ -87,7 +68,7 @@ module.exports = {
         "workflow": "sprite",
         "symbolsConfig": {
             "loadingType": "inject",
-            "usePolyfillForExternalSymbols": false,
+            "usePolyfillForExternalSymbols": true,
             "pathToExternalSymbolsFile": ""
         }
     },
@@ -97,8 +78,8 @@ module.exports = {
     "js": {
         "workflow": "concat",
         "bundler": "webpack",
-        "lint": false,
-        "useBabel": false,
+        "lint": true,
+        "useBabel": true,
         "removeConsoleLog": true,
         "webpack": {
             "useHMR": false,
@@ -120,7 +101,7 @@ module.exports = {
         }
     },
     "notifyConfig": {
-        "useNotify": false,
+        "useNotify": true,
         "title": "TARS notification",
         "sounds": {},
         "taskFinishedText": "Task finished at: "

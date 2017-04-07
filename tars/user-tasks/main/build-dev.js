@@ -18,6 +18,7 @@ module.exports = () => {
                 'css:make-sprite-for-svg', 'css:make-fallback-for-svg', 'css:make-sprite',
                 'images:make-symbols-sprite'
             ],
+            ['uncss:move-html', 'uncss:move-js'],
             [
                 'css:compile-css', 'css:compile-css-for-ie8', 'css:compile-css-for-ie9', 'css:move-separate',
                 'html:concat-mocks-data',
@@ -27,7 +28,7 @@ module.exports = () => {
             ],
             [
                 'js:processing',
-                'html:compile-templates', 'html:uncss'
+                'html:compile-templates'
             ],
             cb
         );

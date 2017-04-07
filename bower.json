@@ -1,0 +1,17 @@
+{
+  "name": "awesome_project",
+  "description": "Your awesome project description",
+  "main": "gulpfile.js",
+  "authors": [
+    "savchukoleksii <savchukoleksii@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

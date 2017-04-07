@@ -20,18 +20,20 @@ function tarsRequire(packageName) {
         try {
             return require(process.env.npmRoot + packageName);
         } catch (error) {
-            const util = require('util');
-
-            console.log('\n');
-            util.inspect.styles.string = 'red';
-            console.log('---------------------------------------------------------------------------------');
-            console.dir('It seems, that TARS in current project is not compatible with current TARS-CLI!', { colors: true });
-            console.dir(`Package "${packageName}" is not available.`, { colors: true });
-            console.dir('Update TARS-CLI via "tars update" and your project via "tars update-project"', { colors: true });
-            console.dir('Please, write to the tars.builder@gmail.com, if update did not help you.', { colors: true });
-            console.log('---------------------------------------------------------------------------------\n');
-
-            throw new Error(`Package ${packageName} is not available.`);
+            try{
+                return require(packageName);
+            }catch(error){
+                const util = require('util');
+                console.log('\n');
+                util.inspect.styles.string = 'red';
+                console.log('---------------------------------------------------------------------------------');
+                console.dir('It seems, that TARS in current project is not compatible with current TARS-CLI!', { colors: true });
+                console.dir(`Package "${packageName}" is not available.`, { colors: true });
+                console.dir('Update TARS-CLI via "tars update" and your project via "tars update-project"', { colors: true });
+                console.dir('Please, write to the tars.builder@gmail.com, if update did not help you.', { colors: true });
+                console.log('---------------------------------------------------------------------------------\n');
+                throw new Error(`Package ${packageName} is not available.`);    
+            }
         }
     }
 
