@@ -13,6 +13,10 @@ module.exports = {
             }
         },
         {
+            "name": 'postcss-discard-duplicates',
+            options: {}
+        },
+        {
             "name": 'postcss-merge-rules',
             options: {}
         },
@@ -61,6 +65,19 @@ module.exports = {
                 ],
                 "unspecified-properties-position": "bottom"
             }
+        },
+        {
+            "name": 'postcss-discard-unused',
+            options: {
+                "fontFace": true,
+                "counterStyle": true,
+                "keyframes": true,
+                "namespace": true
+            }
+        },
+        {
+            "name": 'postcss-merge-rules',
+            options: {}
         }
     ],
     "svg": {

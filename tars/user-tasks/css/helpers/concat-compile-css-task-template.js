@@ -15,9 +15,10 @@ const notifier = tars.helpers.notifier;
 const browserSync = tars.packages.browserSync;
 const stringHelper = tars.helpers.stringHelper;
 const purify = tars.require('gulp-purifycss');
+const del = tars.packages.del;
 
 module.exports = function generateTaskContent(browser) {
-
+    
     browser = browser || '';
 
     const preprocExtensions = tars.cssPreproc.ext;
@@ -158,7 +159,7 @@ module.exports = function generateTaskContent(browser) {
     }
 
     stylesFilesToConcatinate = [].concat.apply([], stylesFilesToConcatinate);
-
+    del([`./dev/${tars.config.fs.staticFolderName}/css/${compiledFileName}${tars.options.build.hash}.css`]).then(paths => {});
     return gulp.src(stylesFilesToConcatinate, { base: process.cwd() })
         .pipe(gulpif(generateSourceMaps, sourcemaps.init()))
         .pipe(plumber({
@@ -181,10 +182,10 @@ module.exports = function generateTaskContent(browser) {
             usePrefix: false
         }))
         .pipe(purify(['./markup/uncss/html/**/*.html','./markup/uncss/js/**/*.js']))
-        .pipe(postcss(postProcessors))
         .pipe(concat(`${compiledFileName}${tars.options.build.hash}.css`))
+        .pipe(postcss(postProcessors))
         .pipe(gulpif(generateSourceMaps, sourcemaps.write(sourceMapsDest)))
-        .pipe(gulp.dest(`./dev/${tars.config.fs.staticFolderName}/css/`))
+        .pipe(gulp.dest(`./dev/${tars.config.fs.staticFolderName}/css`))
         .pipe(browserSync.reload({ stream: true, match: '**/*.css' }))
         .pipe(
             notifier.success(successMessage)
