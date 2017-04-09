@@ -8,19 +8,20 @@ const watcherLog = tars.helpers.watcherLog;
 /**
  * This is an example of watcher
  */
-module.exports = function () {
-    return chokidar.watch(
-        '/* String of path pattern or array of strings */',
+
+module.exports = () => {
+    return tars.packages.chokidar.watch(
+        './bower_components/**/*.{css|scss|js|less|ts}',
         Object.assign(tars.options.watch, {
             // Options set bellow will override default from tars.options.watch
             // If you need default options, you can use just tars.options.watch
-            ignored: '/* String of path pattern or array of strings to ignore. If nothing to igonre — just set it with empty string */',
-            persistent: /* Boolean, true by default*/,
-            ignoreInitial: /* Boolean, true by default*/
+            ignored: '',
+            persistent: true,
+            ignoreInitial: true
         })
-    ).on('all', function (event, watchedPath) {
+    ).on('all', (event, watchedPath) => {
         watcherLog(event, watchedPath);
         // You could start as many tasks as you need
-        gulp.start(/* Task name (String) to start */);
+        gulp.start('css:compile-css');
     });
 };
